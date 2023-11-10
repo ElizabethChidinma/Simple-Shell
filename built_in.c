@@ -8,7 +8,7 @@
 void (*built_in(input_t *inputs))(input_t *inputs)
 {
 	unsigned int i;
-	buil_in_t check[] = {
+	builtins_t check[] = {
 		{"exit", _exit_},
 		{"env", _env},
 		{"setenv", _setenv},
