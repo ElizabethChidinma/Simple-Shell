@@ -57,7 +57,7 @@ unsigned int _strlen(char *s);
 /* memory management: _realloc.c */
 char **_realloc(char **ptr, size_t *size);
 
-void (*_builtins(input_t *inputs))(input_t *inputs);
+void (*built_in(input_t *inputs))(input_t *inputs);
 void _exit_(input_t *inputs);
 void _env(input_t *inputs);
 void _setenv(input_t *inputs);
@@ -87,4 +87,4 @@ unsigned int matching(char c, const char *str);
 char *_strtok(char *str, const char *delim);
 char **tokenize(char *arguments, char *delimiter);
 
-#endif /* _SHELL_H_ */
+#endif /* i_SHELL_H_ */
