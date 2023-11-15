@@ -15,20 +15,27 @@ int _execute(char *command, input_t *inputs)
 	{
 		child = fork();
 		if (child == -1)
+		{
 			_error(inputs, NULL);
+		}
 		if (child == 0)
 		{
 			if (execve(command, inputs->tokens, inputs->env) == -1)
+			{
 				_error(inputs, NULL);
+			}
 		}
 		else
 		{
 		wait(&inputs->status);
 		if (WIFEXITED(inputs->status))
+		{
 			inputs->status = WEXITSTATUS(inputs->status);
+		}
 		else if (WIFSIGNALED(inputs->status) && WTERMSIG(inputs->status) == SIGINT)
 		{
 			inputs->status = 130;
+		}
 			return (0);
 		}
 		inputs->status = 127;

@@ -18,7 +18,7 @@ void (*built_in(input_t *inputs))(input_t *inputs)
 		{"exit", _exit_},
 		{"env", _env},
 		{"setenv", _setenv},
-		{"unsetenv", _unsetenv_built_in},
+		{"unsetenv", unsetenv_built_in},
 		{NULL, NULL}
 	};
 
