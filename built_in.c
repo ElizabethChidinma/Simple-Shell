@@ -1,5 +1,10 @@
 #include "shell.h"
 
+void exit_built_in(input_t *inputs);
+void env_built_in(input_t *inputs);
+void setenv_built_in(input_t *inputs);
+void unsetenv_built_in(input_t *inputs);
+
 /**
  * built_in - checks if the command is a builtin
  * @inputs: variables
@@ -8,11 +13,11 @@
 void (*built_in(input_t *inputs))(input_t *inputs)
 {
 	unsigned int i;
-	buil_in_t check[] = {
-		{"exit", _exit_},
-		{"env", _env},
-		{"setenv", _setenv},
-		{"unsetenv", _unsetenv},
+	built_in_t check[] = {
+		{"exit", exit_built_in},
+		{"env", env_built_in},
+		{"setenv", setenv_built_in},
+		{"unsetenv", unsetenv_built_in},
 		{NULL, NULL}
 	};
 
@@ -42,6 +47,7 @@ void _env(input_t *inputs)
 	}
 	inputs->status = 0;
 }
+
 
 /**
  * _setenv - create a new environment variable, or edit an existing variable

@@ -25,9 +25,9 @@ int _execute(char *command, input_t *inputs)
 		{
 		wait(&inputs->status);
 		if (WIFEXITED(inputs->status))
-		inputs->status = WEXITSTATUS(inputs->status);
+			inputs->status = WEXITSTATUS(inputs->status);
 		else if (WIFSIGNALED(inputs->status) && WTERMSIG(inputs->status) == SIGINT)
-				inputs->status = 130;
+			inputs->status = 130;
 			return (0);
 		}
 		inputs->status = 127;
