@@ -27,6 +27,7 @@ int _execute(char *command, input_t *inputs)
 		if (WIFEXITED(inputs->status))
 			inputs->status = WEXITSTATUS(inputs->status);
 		else if (WIFSIGNALED(inputs->status) && WTERMSIG(inputs->status) == SIGINT)
+		{
 			inputs->status = 130;
 			return (0);
 		}
