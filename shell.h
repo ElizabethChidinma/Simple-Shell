@@ -35,11 +35,11 @@ typedef struct input
 } input_t;
 
 /**
- * struct builtins - struct for the builtin functions
+ * struct built_in - struct for the builtin functions
  * @name: name of builtin command
  * @f: function for corresponding builtin
  */
-typedef struct builtins
+typedef struct built_in
 {
 	char *name;
 	void (*f)(input_t *);

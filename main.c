@@ -44,7 +44,7 @@ int main(int argc, char **argv, char **environment)
 		{
 			inputs.tokens = tokenize(inputs.commands[i], "\n \t\r");
 			if (inputs.tokens && inputs.tokens[0])
-				if (_builtins(&inputs) == NULL)
+				if (built_in(&inputs) == NULL)
 					check_path(&inputs);
 			free(inputs.tokens);
 		}

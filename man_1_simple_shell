@@ -31,7 +31,7 @@ subsequently closes once the script is finished.
 .PP
 .B unsetenv
 - deletes the variable name from the environment
-.SH Builtins
+.SH Built_in
 .IP echo
 Arguments are printed on the standard output.
 .PP
@@ -74,11 +74,11 @@ Expand to the name of the shell or shell script.
 .SH ENVIRONMENT
 .IP HOME
 Automatically set from the user's login direcotyr. Default argument for the
-cd builtin.
+cd built_in.
 .IP PATH
 Default search for executables.
 .IP CDPATH
-Search path for cd builtin.
+Search path for cd built_in.
 .IP PS1
 Prompt prompt string: the default is "$ ".
 .IP PS2
