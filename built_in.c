@@ -13,11 +13,19 @@ void unsetenv_built_in(input_t *inputs);
 void (*built_in(input_t *inputs))(input_t *inputs)
 {
 	unsigned int i;
+<<<<<<< HEAD
 	built_in_t check[] = {
 		{"exit", exit_built_in},
 		{"env", env_built_in},
 		{"setenv", setenv_built_in},
 		{"unsetenv", unsetenv_built_in},
+=======
+	builtins_t check[] = {
+		{"exit", _exit_},
+		{"env", _env},
+		{"setenv", _setenv},
+		{"unsetenv", _unsetenv},
+>>>>>>> f0c2232ea2f51ea6664c155749c51f9496fa706a
 		{NULL, NULL}
 	};
 

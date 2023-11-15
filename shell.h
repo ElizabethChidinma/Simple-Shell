@@ -80,6 +80,7 @@ int check_dir(char *s);
 void _error(input_t *inputs, char *message);
 void _printer(char *str);
 char *_int_str(unsigned int count);
+void execute_command(char *command);
 
 /* _strtok & tokenize: _strtok.c & tokenizer.c */
 unsigned int matching(char c, const char *str);
