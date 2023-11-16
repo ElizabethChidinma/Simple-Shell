@@ -91,11 +91,11 @@ void check_path(input_t *inputs)
 		path = find_path(inputs->env);
 		if (path != NULL)
 		{
-			dup = _strdup(path + 5);
+			dup = strdup(path + 5);
 			path_tokens = tokenize(dup, ":");
 			for (i = 0; path_tokens && path_tokens[i]; i++, free(check))
 			{
-				check = _strcat(path_tokens[i], inputs->tokens[0]);
+				check = strcat(path_tokens[i], inputs->tokens[0]);
 				if (access(check, F_OK) == 0)
 				{
 					r = _execute(check, inputs);

@@ -10,7 +10,7 @@ void _printer(char *str)
 {
 	ssize_t num, len;
 
-	num = _strlen(str);
+	num = strlen(str);
 	len = write(STDERR_FILENO, str, num);
 	if (len != num)
 	{

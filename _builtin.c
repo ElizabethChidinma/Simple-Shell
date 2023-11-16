@@ -5,7 +5,7 @@
  * @inputs: variables
  * Return: pointer to the function or NULL
  */
-void (*_builtins(input_t *inputs))(input_t *inputs)
+void (*_builtins(input_t *inputs)) (input_t *inputs)
 {
 	unsigned int i;
 	builtins_t check[] = {
@@ -18,7 +18,7 @@ void (*_builtins(input_t *inputs))(input_t *inputs)
 
 	for (i = 0; check[i].f != NULL; i++)
 	{
-		if (_strncmp(inputs->tokens[0], check[i].name) == 0)
+		if (strcmp(inputs->tokens[0], check[i].name) == 0)
 			break;
 	}
 	if (check[i].f != NULL)
@@ -38,8 +38,8 @@ void _env(input_t *inputs)
 
 	for (i = 0; inputs->env[i]; i++)
 	{
-		_puts(inputs->env[i]);
-		_puts("\n");
+		puts(inputs->env[i]);
+		puts("\n");
 	}
 	inputs->status = 0;
 }

@@ -9,7 +9,7 @@ void _exit_(input_t *inputs)
 {
 	int status;
 
-	if (_strncmp(inputs->tokens[0], "exit") == 0 &&
+	if (strcmp(inputs->tokens[0], "exit") == 0 &&
 	    inputs->tokens[1] != NULL)
 	{
 		status = _atoi(inputs->tokens[1]);

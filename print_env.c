@@ -20,7 +20,7 @@ char **init_env(char **environ)
 		exit(1);
 	}
 	for (i = 0; environ[i] != NULL; i++)
-		new[i] = _strdup(environ[i]);
+		new[i] = strdup(environ[i]);
 	new[i] = NULL;
 	return (new);
 }
@@ -89,7 +89,7 @@ char **find_env(char **env, char *path)
 {
 	unsigned int i, j, len;
 
-	len = _strlen(path);
+	len = strlen(path);
 	for (i = 0; env[i] != NULL; i++)
 	{
 		for (j = 0; j < len; j++)
@@ -114,8 +114,8 @@ char *add_value(char *key, char *value)
 	char *new;
 
 
-	len1 = _strlen(key);
-	len2 = _strlen(value);
+	len1 = strlen(key);
+	len2 = strlen(value);
 	new = malloc(sizeof(char) * (len1 + len2 + 2));
 	if (new == NULL)
 		return (NULL);

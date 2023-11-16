@@ -35,11 +35,11 @@ typedef struct input
 } input_t;
 
 /**
- * struct built_in - struct for the builtin functions
+ * struct builtins - struct for the builtin functions
  * @name: name of builtin command
  * @f: function for corresponding builtin
  */
-typedef struct built_in
+typedef struct builtins
 {
 	char *name;
 	void (*f)(input_t *);
@@ -57,7 +57,7 @@ unsigned int _strlen(char *s);
 /* memory management: _realloc.c */
 char **_realloc(char **ptr, size_t *size);
 
-void (*built_in(input_t *inputs))(input_t *inputs);
+void (*_builtins(input_t *inputs)) (input_t *inputs);
 void _exit_(input_t *inputs);
 void _env(input_t *inputs);
 void _setenv(input_t *inputs);
@@ -80,11 +80,10 @@ int check_dir(char *s);
 void _error(input_t *inputs, char *message);
 void _printer(char *str);
 char *_int_str(unsigned int count);
-void execute_command(char *command);
 
 /* _strtok & tokenize: _strtok.c & tokenizer.c */
 unsigned int matching(char c, const char *str);
 char *_strtok(char *str, const char *delim);
 char **tokenize(char *arguments, char *delimiter);
 
-#endif /* i_SHELL_H_ */
+#endif /* _SHELL_H_ */

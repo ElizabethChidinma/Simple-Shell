@@ -9,7 +9,7 @@
 void sig_handler(int sig_handler)
 {
 	(void) sig_handler;
-	_puts("\n$ ");
+	puts("\n$ ");
 }
 
 /**
@@ -34,7 +34,7 @@ int main(int argc, char **argv, char **environment)
 	if (!isatty(STDIN_FILENO))
 		interactive = 1;
 	if (interactive == 0)
-		_puts("$ ");
+		puts("$ ");
 
 	while (getline(&(inputs.buffer), &buffer, stdin) != -1)
 	{
@@ -44,18 +44,18 @@ int main(int argc, char **argv, char **environment)
 		{
 			inputs.tokens = tokenize(inputs.commands[i], "\n \t\r");
 			if (inputs.tokens && inputs.tokens[0])
-				if (built_in(&inputs) == NULL)
+				if (_builtins(&inputs) == NULL)
 					check_path(&inputs);
 			free(inputs.tokens);
 		}
 		free(inputs.buffer);
 		free(inputs.commands);
 		if (interactive == 0)
-			_puts("$ ");
+			puts("$ ");
 		inputs.buffer = NULL;
 	}
 	if (interactive == 0)
-		_puts("\n");
+		puts("\n");
 	free_environ(inputs.env);
 	free(inputs.buffer);
 	exit(inputs.status);
